@@ -195,6 +195,10 @@ iodef &lt;URL> :  Specifies a URL to which an issuer MAY report
    Certificate Evaluator may use to report observation of a possible
    policy violation.  The Incident Object Description Exchange Format
    (IODEF) format is used {{!RFC5070}}.
+   
+contact &ltURL> :  The contact property entry specifies the authorized 
+   means of contacting the holder of the domain or another party who is 
+   authorized to approve issuance of certificates for the domain.
 
 The following example is a DNS zone file (see {{!RFC1035}}) that informs
 CAs that certificates are not to be issued except by the holder of
@@ -535,6 +539,21 @@ mailto:  The IODEF incident report is reported as a MIME email
 http or https:  The IODEF report is submitted as a Web service
    request to the HTTP address specified using the protocol specified
    in {{!RFC6546}}.
+
+## CAA contact Property
+
+The contact property specifies a means of contacting the domain holder,
+or another party that is authorized to approve issuance of certificates
+for the domain in question.
+
+The contact property takes a URL as its parameter.  The following URL
+scheme types SHOULD be implemented:
+
+mailto: An SMTP email address where the domain holder or other 
+   authorized party can be contacted.
+   
+tel: A telephone number where the domain holder or other authorized
+   party can be contacted.
 
 #  Security Considerations
 
